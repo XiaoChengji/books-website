@@ -1,0 +1,28 @@
+extends ../layout
+
+block title
+	title=book.title
+block content
+	form.fs-12(action="/admin/save", method="POST")
+		div.form-group
+			label(for="book-name") 书名
+			input.form-control#book-name.fs-12(type="text", name="name", placeholder="请输入书名", value=name)
+		div.form-group
+			label(for="author") 作者
+			input.form-control#author.fs-12(type="text", name="author", placeholder="请输入作者", value=author)
+		div.form-group
+			label(for="publisher") 出版社
+			input.form-control#publisher.fs-12(type="text", name="publisher",  placeholder="请输入出版社", value=publisher)
+		div.form-group
+			label(for="image") 图片
+			input.form-control#image.fs-12(type="text", name="imageUrl",  placeholder="请输入图片", value=imageUrl)
+		div.form-group
+			label(for="desc") 描叙
+			input.form-control#desc.fs-12(type="text", name="desc",  placeholder="请输入描叙", value=desc)
+		div.form-group
+			label(for="content") 内容
+			input.form-control#content.fs-12(type="text", name="cont" placeholder="请输入内容", value=cont)
+		if(id)
+			input(type="hidden", name="_id", value=id)
+		div.tr
+			button.btn.vbook-btn-primary(type="submit") 保存

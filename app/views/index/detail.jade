@@ -1,0 +1,18 @@
+extends ../layout
+
+block title
+    title=book.title
+block content
+    div.container
+        p.fs-12.color-grey 详情->
+        div.blog-header.mm-50
+            h1.blog-title.fs-16=detail.name
+            p.lead.blog-description.fs-12.color-grey.mb-0=detail.desc
+        div.row.mm-50
+            .col-sm-12.blog-main
+                .blog-post.tc.mm-15
+                    img(src=detail.imageUrl)
+                .blog-post
+                    p.blog-post-title.fs-16 内容
+                    p.ti-2.fs-12=detail.cont
+                include ../comment/list

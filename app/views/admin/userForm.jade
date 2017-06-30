@@ -1,0 +1,31 @@
+extends ../layout
+
+block title
+	title=book.title
+block content
+	form.fs-12(action="/admin/user/update", method="POST")
+		div.form-group
+			label(for="name") 用户名
+			input.form-control#name.fs-12(type="text", name="name", value=data.name, disabled="disabled")
+		div.form-group
+			label(for="password") 密码
+			input.form-control#password.fs-12(type="text", name="password", placeholder="请输入修改密码", value="")
+		div.form-group
+			label(for="password") 权限
+			-if (user.roles > 1) {
+				select.form-control(name="roles", value=data.roles, autocomplete="off")
+					-var rolesArr = ['普通用户', '管理员', '超级管理员'];
+					-for (var i=0;i<rolesArr.length;i++) {
+						-if (i == data.roles) {
+							option(value=i, selected="selected") #{rolesArr[i]}
+						-} else {
+							option(value=i) #{rolesArr[i]}
+						-}
+					-}
+			- } else {
+				input.form-control#name.fs-12(type="text", name="name", value=rolesArr[data.roles], disabled="disabled")
+			- }
+		if(data.id)
+			input(type="hidden", name="id", value=data.id)
+		div.tr
+			button.btn.vbook-btn-primary(type="submit") 保存

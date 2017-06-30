@@ -1,0 +1,18 @@
+div.navbar.mb-0.mh-auto.bg-fafafa
+	ol.breadcrumb.mb-0.fs-12.color-grey
+		if user
+			li
+				span 欢迎你, #{ user.name }
+			if user.roles == 1
+				li
+					a(href="/admin/list") 管理
+			li
+				a(href="/user/login/out") 退出
+		else
+			li
+				a(href="/user/login") 登录
+			li
+				a(href="/user/register") 注册
+div.title
+	p=book.title
+	p.fs-12.color-grey 一个介绍书的简易书城网站

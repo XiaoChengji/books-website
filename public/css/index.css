@@ -1,0 +1,242 @@
+* {
+	font-family: "Microsoft YaHei","\5FAE\8F6F\96C5\9ED1",STXihei,"华文细黑",Georgia,"Times New Roman",serif;
+}
+
+a {
+	color: #2f5cdd;
+}
+
+a:hover {
+	color: #2f5cdd;
+}
+
+/*
+ * 字体样式 开始
+*/
+.fs-20 {
+	font-size: 20px;
+}
+
+.fs-16 {
+	font-size: 16px;
+}
+
+.fs-14 {
+	font-size: 14px;
+}
+
+.fs-12 {
+	font-size: 12px;
+}
+/*
+ * 字体样式 结束
+*/
+
+
+/*
+ * 颜色样式 开始
+*/
+.bg-fafafa {
+	background: #fafafa;
+}
+
+.color-black {
+	color: #2a3c59;
+}
+
+.color-999 {
+	color: #999;
+}
+
+.color-grey {
+	color: #999;
+}
+
+.color-blue {
+	color: #2f5cdd;
+}
+/*
+ * 颜色样式 结束
+*/
+
+.wrapper {
+	margin: 0 auto;
+	width: 1200px;	
+}
+
+.box-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/*
+ * 宽高样式 开始
+*/
+.width-400 {
+	width: 400px;
+}
+
+.height-40 {
+	overflow: hidden;
+	height: 40px;
+}
+/*
+ * 宽高样式 结束
+*/
+
+/*
+ * 边距样式 开始
+*/
+.mt-15 {
+	margin-top: 15px;
+}
+
+.mt-30 {
+	margin-top: 30px;
+}
+
+.mb-0 {
+	margin-bottom: 0;
+}
+
+.mb-15 {
+	margin-bottom: 15px;
+}
+
+.mb-30 {
+	margin-bottom: 30px;
+}
+
+.ml-15 {
+	margin-left: 15px;
+}
+
+.mr-15 {
+	margin-right: 15px;
+}
+
+.mm-15 {
+	margin: 15px auto;
+}
+
+.mm-50 {
+	margin: 0 50px;
+}
+
+.pt-15 {
+	padding-top: 15px;
+}
+
+.pt-30 {
+	padding-top: 30px;
+}
+
+.pb-30 {
+	padding-bottom: 30px;
+}
+
+.pp-15 {
+	padding: 15px;
+}
+/*
+ * 边距样式 结束
+*/
+
+.border-grey {
+	cursor: pointer;
+	border: 1px solid #e5e5e5;
+}
+
+.bb {
+	border-bottom: 1px solid #ddd;
+}
+
+.tc {
+	text-align: center;
+}
+
+.tr {
+	text-align: right;
+}
+
+.ti-2 {
+	text-indent: 2em;
+}
+
+.mh-auto {
+	min-height: auto;
+}
+
+textarea.comment-text {
+	height: 40px;
+	line-height: 28px;
+	resize: none;
+}
+
+textarea.publish-comment-text {
+	height: 110px;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+	vertical-align: middle;
+}
+
+td {
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+p {
+	line-height: 20px;
+	word-break: break-all;
+}
+
+.nowrap {
+	overflow: hidden;
+	word-break: break-all;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	border-bottom: 1px solid #e8e8e8;
+	z-index: 99;
+}
+
+.navbar ol {
+	overflow: hidden;
+	width: 100%;
+	text-align: right;
+}
+
+.title {
+	margin: 35px auto 20px;
+	padding-top: 30px;
+	font-size: 24px;
+	text-align: center;
+}
+
+.thumbnail {
+	margin-bottom: 15px;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+}
+
+.vbook-btn-primary {
+	height: 40px;
+	color: #fff;
+	background-color: #2f5cdd;
+	border-color: #2e6da4;
+}
+
+.vbook-btn-primary:hover {
+	color: #fff;
+}

@@ -1,0 +1,46 @@
+p.fs-16.mt-15 评论列表
+div.row.mt-15
+	each commentItem in comment
+		div.col-md-1
+			a.thumbnail(href="javascript:void(0);")
+				img(src="/static/images/avatar.png" alt="头像", style="border-radius: 50%;")
+		div.col-md-11
+			p 
+				a.mr-15.fs-12(href="javascript:void(0);")=commentItem.from.name
+			p.fs-12=commentItem.cont
+			if(commentItem.reply.length > 0)
+				each replyItem in commentItem.reply
+					div.row
+						div.col-md-1
+							a.thumbnail(href="javascript:void(0);")
+								img(src="/static/images/avatar.png" alt="头像", style="border-radius: 50%;")
+						div.col-md-11
+							p.fs-12 
+								a.mr-15(href="javascript:void(0);")=replyItem.from.name
+								| 回复
+								a.ml-15(href="javascript:void(0);")=replyItem.to.name
+							p.fs-12=replyItem.cont
+			h5.mt-15.fs-12.color-grey 回复当前评论
+			div.row.tc.mb-30
+				form(action="/comment/add", method="post")
+					input(type="hidden", name="id", value=commentItem._id)
+					input(type="hidden", name="bookId", value=detail._id)
+					input(type="hidden", name="from", value=user._id)
+					input(type="hidden", name="to", value=commentItem.from._id)
+					div.col-md-11
+						textarea.form-control.height-40.comment-text(name="cont")
+					div.col-md-1
+						button.btn.vbook-btn-primary(type="submit") 提交
+p.fs-16.mt-15 发表评论
+form(action="/comment/add", method="POST")
+	input(type="hidden", name="bookId", value=detail._id)
+	input(type="hidden", name="from", value=user._id)
+	div.row.mt-15
+		div.col-md-1
+			a.thumbnail.mb-0(href="javascript:void(0);")
+				img(src="/static/images/avatar.png" alt="头像", style="border-radius: 50%;")
+				p.tc.mb-0.fs-12=user.name
+		div.col-md-11
+			textarea.form-control.publish-comment-text(name="cont")
+	div.row.mt-15.mb-30.tr(style="margin-right: 1px;")
+		button.btn.vbook-btn-primary(type="submit") 发表评论

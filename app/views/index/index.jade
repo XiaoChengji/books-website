@@ -1,0 +1,52 @@
+extends ../layout
+
+block title
+	title=book.title
+block content
+	div.row
+		each item in data
+			div.col-sm-2.mt-15.ml-15.mr-15.mb-15.pp-15.border-grey
+				div.thumbnail.mb-15
+					img(src=item.imageUrl, alt=item.name, style="width:100px;height:100px;")
+				div.caption
+					p.fs-14.height-40=item.name
+					p.fs-12.nowrap.color-grey=item.desc
+					p.mb-0.tr
+						a.fs-12(href="/detail/#{item._id}") 详情
+	- if (pageNum <= pageSum) {
+		nav.tc
+			ul.pagination
+				- if (pageNum - 1 == 0) {
+					li.disabled
+						a(href="#", aria-label="Previous")
+							span(aria-hidden="true") «
+				- } else {
+					li
+						a(href="/?pageNum=#{pageNum-1}&pageSize=10", aria-label="Previous")
+							span(aria-hidden="true") «
+				- }
+				- for (let i=0;i<pageSum;i++) {
+					- if (pageNum == i + 1) {
+						li.active
+							a(href="/?pageNum=#{i+1}&pageSize=10")
+								| #{i+1}
+								span.sr-only=(current)
+					- } else {
+						li
+							a(href="/?pageNum=#{i+1}&pageSize=10")
+								| #{i+1}
+								span.sr-only=(current)
+					- }
+
+				- }
+				- if (pageNum == pageSum) {
+					li.disabled
+						a(href="#", aria-label="Next")
+							span(aria-hidden="true") »
+				- } else {
+					li
+						a(href="/?pageNum=#{pageNum+1}&pageSize=10", aria-label="Next")
+							span(aria-hidden="true") »
+				- }
+	- }
+

@@ -1,0 +1,30 @@
+extends ../layout
+
+block title
+	title=book.title
+block content
+	div.row.mb-15
+		div.col-sm-12.tr
+			a.btn.vbook-btn-primary(href="/admin/import/douban", style="height:auto;") 豆瓣导入页
+	table.table.table-bordered.table-hover.fs-12
+		thead
+			tr
+				th 书名
+				th 作者
+				th 出版社
+				th 图片
+				th 描叙
+				th 内容
+				th 操作
+		tbody
+		each item in data
+			tr
+				td(width="10%")=item.name
+				td(width="5%")=item.author
+				td(width="5%")=item.publisher
+				td(width="20%")=item.imageUrl
+				td(width="20%")=item.desc
+				td(width="25%")=item.cont
+				td(width="15%")
+					button.btn.btn-success(type="button", onclick="window.location.href='/admin/form?id=#{item._id}'") 修改
+					button.btn.btn-danger.ml-15(type="button", onclick="window.location.href='/admin/del/#{item._id}'") 删除
